@@ -316,3 +316,15 @@ small,
     /* Doble drop-shadow para intensidad neón */
     filter: drop-shadow(0 0 15px rgba(0, 225, 255, 0.4)) drop-shadow(0 0 30px rgba(189, 0, 255, 0.2));
 }
+
+/* Project Header Ajustado para Grid Vertical */
+.project-header {
+    background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+    padding: 25px;
+    color: white;
+    /* Quitamos el borde derecho y ponemos uno inferior para separar del contenido */
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    /* Alineación izquierda para el grid */
+    text-align: left;
+}
