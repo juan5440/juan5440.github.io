@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es" data-theme="light">
+<html lang="es" data-theme="dark">
 
 <head>
     <meta charset="UTF-8">
@@ -8,246 +8,71 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-
-    <style>
-        /* --- Variables CSS Globales --- */
-        
-        :root {
-            /* NUEVO COLOR PRINCIPAL (Neon Cyan & Purple) */
-            --primary-accent: #00e1ff;
-            --secondary-accent: #bd00ff;
-            --transition: all 0.3s ease;
-            --neon-glow: 0 0 10px rgba(0, 225, 255, 0.5), 0 0 20px rgba(0, 225, 255, 0.3);
-            --glass-bg: rgba(15, 23, 42, 0.6);
-            --glass-border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        /* --- TEMA CLARO --- */
-        
-        [data-theme="light"] {
-            --bg-body: #f0f2f5;
-            --bg-card: #ffffff;
-            --text-main: #1e293b;
-            --text-muted: #64748b;
-            --border-color: #cbd5e1;
-            --nav-bg: #1e293b;
-            --hero-overlay: rgba(30, 41, 59, 0.9), rgba(15, 23, 42, 0.95);
-        }
-        /* --- TEMA OSCURO (Default & Enhanced) --- */
-        
-        [data-theme="dark"] {
-            --bg-body: #02040a;
-            /* Deep Black/Blue */
-            --bg-card: #0f172a;
-            --text-main: #f8fafc;
-            --text-muted: #94a3b8;
-            --border-color: #1e293b;
-            --nav-bg: rgba(2, 6, 23, 0.8);
-            /* Glassy Nav */
-            --hero-overlay: rgba(2, 4, 10, 0.92), rgba(0, 0, 0, 0.96);
-        }
-        
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--bg-body);
-            color: var(--text-main);
-            transition: var(--transition);
-        }
-        /* Clases de utilidad para colores personalizados */
-        
-        .text-accent {
-            color: var(--primary-accent) !important;
-        }
-        
-        .bg-accent {
-            background-color: var(--primary-accent) !important;
-        }
-        /* Navbar */
-        
-        .navbar {
-            background-color: var(--nav-bg) !important;
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-            transition: var(--transition);
-        }
-        /* --- HERO SECTION (NUEVA) --- */
-        
-        .hero {
-            /* Imagen de fondo 3D abstracta de tecnología */
-            background-image: linear-gradient(var(--hero-overlay)), url('https://images.unsplash.com/photo-1451187580500-0f335b3ccaf9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            /* Efecto Parallax opcional */
-            color: white;
-            padding: 140px 0 120px;
-            clip-path: polygon(0 0, 100% 0, 100% 92%, 0 100%);
-            /* Corte diagonal en la base */
-            position: relative;
-        }
-        /* Cards */
-        
-        .tech-card,
-        .project-card,
-        .content-box {
-            background: var(--bg-card);
-            border-radius: 16px;
-            padding: 20px;
-            transition: var(--transition);
-            border: 1px solid var(--border-color);
-            color: var(--text-main);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .tech-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--primary-accent);
-            box-shadow: var(--neon-glow);
-        }
-        
-        .project-card {
-            border: none;
-            overflow: hidden;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-        }
-        
-        .project-header {
-            background: #1e293b;
-            position: relative;
-            overflow: hidden;
-            padding: 30px;
-            color: white;
-            text-align: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-        }
-        /* Un pequeño toque visual en el header de los proyectos */
-        
-        .project-header::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: linear-gradient(to right, var(--primary-accent), var(--secondary-accent));
-        }
-        /* Botones Personalizados */
-        
-        .btn-accent {
-            background-color: transparent;
-            color: var(--primary-accent);
-            border: 1px solid var(--primary-accent);
-            padding: 10px 25px;
-            font-weight: 600;
-            transition: var(--transition);
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 0 5px rgba(0, 225, 255, 0.2);
-        }
-        
-        .btn-accent:hover {
-            background-color: var(--primary-accent);
-            color: #000;
-            transform: translateY(-2px);
-            box-shadow: var(--neon-glow);
-        }
-        
-        .btn-outline-accent {
-            color: var(--primary-accent);
-            border: 2px solid var(--primary-accent);
-            font-weight: 600;
-            transition: var(--transition);
-        }
-        
-        .btn-outline-accent:hover {
-            background-color: var(--primary-accent);
-            color: white;
-        }
-        /* Badges */
-        
-        .badge-tech {
-            background-color: rgba(99, 102, 241, 0.1);
-            color: var(--primary-accent);
-            border: 1px solid rgba(99, 102, 241, 0.2);
-        }
-        
-        .badge-project-main {
-            background-color: var(--primary-accent);
-            color: white;
-        }
-        /* Theme Toggle Button */
-        
-        .theme-toggle {
-            cursor: pointer;
-            padding: 8px 12px;
-            border-radius: 50px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            background: rgba(255, 255, 255, 0.1);
-            color: white;
-            transition: var(--transition);
-        }
-        
-        .theme-toggle:hover {
-            background: rgba(255, 255, 255, 0.2);
-        }
-        
-        .text-dynamic-muted {
-            color: var(--text-muted) !important;
-        }
-        
-        #contenido {
-            background-color: rgba(0, 0, 0, 0.02);
-        }
-        /* Footer icons hover */
-        
-        .hover-scale:hover {
-            color: var(--primary-accent) !important;
-            transform: scale(1.1);
-            transition: var(--transition);
-        }
-    </style>
+    
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="#">J. Gabriel Soto</a>
+            <a class="navbar-brand fw-bold" href="#">
+                <span class="text-accent">&lt;</span> J. Gabriel Soto <span class="text-accent">/&gt;</span>
+            </a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <ul class="navbar-nav align-items-center">
                     <li class="nav-item"><a class="nav-link" href="#proyectos">Proyectos</a></li>
                     <li class="nav-item"><a class="nav-link" href="#skills">Habilidades</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contenido">Contenido</a></li>
-                    <li class="nav-item ms-lg-3">
-                        <button class="theme-toggle" onclick="toggleTheme()" aria-label="Cambiar tema">
-                                <i class="fas fa-moon" id="theme-icon"></i>
-                            </button>
+                    
+                    <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+                        <button class="theme-toggle" onclick="toggleTheme()" aria-label="Cambiar tema" title="Cambiar modo Día/Noche">
+                            <i class="fas fa-sun" id="theme-icon"></i>
+                        </button>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <section class="hero text-center">
+    <section class="hero d-flex align-items-center">
         <div class="container">
-            <img src="Gemini_Generated_Image_ivorn8ivorn8ivor-modified.png" class="rounded-circle mb-4 shadow border border-4 border-white bg-white p-1" width="128" alt="Developer">
+            <div class="row align-items-center flex-column-reverse flex-lg-row">
+                
+                <div class="col-lg-6 text-center text-lg-start mt-5 mt-lg-0">
+                    <div class="badge-tech d-inline-block px-3 py-1 rounded-pill mb-3">
+                        <i class="fas fa-code me-2"></i>Full Stack Developer
+                    </div>
+                    <h1 class="display-4 fw-bold mb-3">
+                        Hola, soy <span class="text-gradient">Juan Gabriel</span>
+                    </h1>
+                    <p class="lead text-muted mb-4">
+                        Especialista en crear sistemas robustos con <strong class="text-accent">Laravel</strong> y experiencias web modernas. Transformo ideas complejas en código limpio y eficiente.
+                    </p>
 
-            <h1 class="display-4 fw-bold">Juan Gabriel Soto Aldana</h1>
-            <h2 class="h4 fw-light mb-4 opacity-90">Desarrollador Web Full Stack | Especialista en Laravel & PHP</h2>
+                    <div class="d-flex justify-content-center justify-content-lg-start gap-3">
+                        <a href="https://github.com/juan5440" target="_blank" class="btn btn-accent">
+                            <i class="fab fa-github me-2"></i> GitHub
+                        </a>
+                        <a href="https://www.linkedin.com/in/juan-gabriel-soto-aldana-b36534218/?originalSubdomain=sv" target="_blank" class="btn btn-outline-accent">
+                            <i class="fab fa-linkedin me-2"></i> LinkedIn
+                        </a>
+                    </div>
+                </div>
 
-            <div class="d-flex justify-content-center gap-3">
-                <a href="https://github.com/juan5440" target="_blank" class="btn btn-outline-light px-4"><i
-                            class="fab fa-github me-2"></i> GitHub</a>
-                <a href="https://www.linkedin.com/in/juan-gabriel-soto-aldana-b36534218/?originalSubdomain=sv" target="_blank" class="btn btn-accent px-4"><i
-                            class="fab fa-linkedin me-2"></i> LinkedIn</a>
+                <div class="col-lg-6 text-center position-relative">
+                    <div class="hero-glow"></div>
+                    <img id="hero-image" src="images/noche.png" 
+                         alt="Setup Desarrollo" 
+                         class="img-fluid floating-neon rounded-4 position-relative z-1"
+                         style="max-width: 90%;">
+                </div>
+
             </div>
         </div>
     </section>
@@ -255,57 +80,18 @@
     <section id="skills" class="container py-5">
         <div class="text-center mb-5">
             <h6 class="text-uppercase text-accent fw-bold ls-2">Tecnologías</h6>
-            <h2 class="fw-bold">Mi Stack de Desarrollo</h2>
+            <h2 class="fw-bold">Mi Arsenal Tecnológico</h2>
         </div>
+        
         <div class="row g-4 justify-content-center">
-            <div class="col-6 col-md-3 col-lg-2">
-                <div class="tech-card h-100">
-                    <i class="fab fa-laravel fa-2x text-accent mb-2"></i>
-                    <div class="fw-bold">Laravel</div>
-                </div>
-            </div>
-            <div class="col-6 col-md-3 col-lg-2">
-                <div class="tech-card h-100">
-                    <i class="fab fa-php fa-2x text-primary mb-2"></i>
-                    <div class="fw-bold">PHP 8</div>
-                </div>
-            </div>
-            <div class="col-6 col-md-3 col-lg-2">
-                <div class="tech-card h-100">
-                    <i class="fas fa-database fa-2x text-warning mb-2"></i>
-                    <div class="fw-bold">MySQL</div>
-                </div>
-            </div>
-            <div class="col-6 col-md-3 col-lg-2">
-                <div class="tech-card h-100">
-                    <i class="fab fa-git-alt fa-2x text-accent mb-2"></i>
-                    <div class="fw-bold">Git</div>
-                </div>
-            </div>
-            <div class="col-6 col-md-3 col-lg-2">
-                <div class="tech-card h-100">
-                    <i class="fas fa-cube fa-2x text-secondary mb-2"></i>
-                    <div class="fw-bold">Composer</div>
-                </div>
-            </div>
-            <div class="col-6 col-md-3 col-lg-2">
-                <div class="tech-card h-100">
-                    <i class="fab fa-js fa-2x text-warning mb-2"></i>
-                    <div class="fw-bold">JavaScript</div>
-                </div>
-            </div>
-            <div class="col-6 col-md-3 col-lg-2">
-                <div class="tech-card h-100">
-                    <i class="fab fa-bootstrap fa-2x text-info mb-2"></i>
-                    <div class="fw-bold">AdminLTE</div>
-                </div>
-            </div>
-            <div class="col-6 col-md-3 col-lg-2">
-                <div class="tech-card h-100">
-                    <i class="fab fa-linux fa-2x text-dark mb-2" style="color: var(--text-main) !important;"></i>
-                    <div class="fw-bold">Linux Mint</div>
-                </div>
-            </div>
+            <div class="col-6 col-md-3 col-lg-2"><div class="tech-card h-100 text-center"><i class="fab fa-laravel fa-2x text-accent mb-2"></i><div class="fw-bold">Laravel</div></div></div>
+            <div class="col-6 col-md-3 col-lg-2"><div class="tech-card h-100 text-center"><i class="fab fa-php fa-2x text-primary mb-2"></i><div class="fw-bold">PHP 8</div></div></div>
+            <div class="col-6 col-md-3 col-lg-2"><div class="tech-card h-100 text-center"><i class="fas fa-database fa-2x text-warning mb-2"></i><div class="fw-bold">MySQL</div></div></div>
+            <div class="col-6 col-md-3 col-lg-2"><div class="tech-card h-100 text-center"><i class="fab fa-git-alt fa-2x text-accent mb-2"></i><div class="fw-bold">Git</div></div></div>
+            <div class="col-6 col-md-3 col-lg-2"><div class="tech-card h-100 text-center"><i class="fas fa-cube fa-2x text-muted mb-2"></i><div class="fw-bold">Composer</div></div></div>
+            <div class="col-6 col-md-3 col-lg-2"><div class="tech-card h-100 text-center"><i class="fab fa-js fa-2x text-warning mb-2"></i><div class="fw-bold">JavaScript</div></div></div>
+            <div class="col-6 col-md-3 col-lg-2"><div class="tech-card h-100 text-center"><i class="fab fa-bootstrap fa-2x text-info mb-2"></i><div class="fw-bold">AdminLTE</div></div></div>
+            <div class="col-6 col-md-3 col-lg-2"><div class="tech-card h-100 text-center"><i class="fab fa-linux fa-2x text-muted mb-2"></i><div class="fw-bold">Linux Mint</div></div></div>
         </div>
     </section>
 
@@ -313,15 +99,15 @@
         <div class="container">
             <div class="text-center mb-5">
                 <h2 class="fw-bold">Proyectos Destacados</h2>
-                <p class="text-dynamic-muted">Soluciones desarrolladas desde el análisis hasta el despliegue</p>
+                <p class="text-muted">Soluciones desarrolladas desde el análisis hasta el despliegue</p>
             </div>
 
             <div class="row g-4">
-                <!-- Nuevo Proyecto: Dental Actualizado -->
+                
                 <div class="col-lg-12">
                     <div class="card project-card mb-4">
                         <div class="row g-0">
-                            <div class="col-md-4 project-header" style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);">
+                            <div class="col-md-4 project-header">
                                 <i class="fas fa-tooth fa-5x mb-3 text-accent" style="text-shadow: 0 0 15px var(--primary-accent);"></i>
                                 <h3 class="h4">Sistema Dental</h3>
                                 <span class="badge badge-project-main mt-2">PHP & MySQL</span>
@@ -329,23 +115,13 @@
                             <div class="col-md-8">
                                 <div class="card-body p-4">
                                     <h5 class="card-title fw-bold">Sistema de Gestión Clínica Dental</h5>
-                                    <p class="card-text text-dynamic-muted">
-                                        Plataforma integral para la administración de clínicas odontológicas. Permite la gestión de pacientes, citas, historiales médicos y facturación.
-                                        Optimizado para un flujo de trabajo eficiente y seguro.
-                                    </p>
+                                    <p class="card-text text-muted">Plataforma integral para la administración de clínicas odontológicas. Permite la gestión de pacientes, citas, historiales médicos y facturación.</p>
                                     <div class="mb-3">
                                         <span class="badge badge-tech me-1">Agenda</span>
                                         <span class="badge badge-tech me-1">Historial Clínico</span>
-                                        <span class="badge badge-tech me-1">Facturación</span>
-                                        <span class="badge badge-tech me-1">Reportes</span>
+                                        <span class="badge badge-tech me-1">Odontograma</span>
                                     </div>
-                                    <ul class="list-unstyled mb-4 text-dynamic-muted small">
-                                        <li><i class="fas fa-check text-accent me-2"></i> Control total de expedientes de pacientes.</li>
-                                        <li><i class="fas fa-check text-accent me-2"></i> Interfaz intuitiva y moderna.</li>
-                                    </ul>
-                                    <a href="https://github.com/juan5440" target="_blank" class="btn btn-outline-accent btn-sm"><i
-                                                class="fab fa-github me-1"></i>
-                                            Ver Código</a>
+                                    <a href="https://github.com/juan5440/dental-actualizado" target="_blank" class="btn btn-outline-accent btn-sm"><i class="fab fa-github me-1"></i> Ver Código</a>
                                 </div>
                             </div>
                         </div>
@@ -358,34 +134,49 @@
                             <div class="col-md-4 project-header">
                                 <i class="fas fa-cash-register fa-5x mb-3 text-white-50"></i>
                                 <h3 class="h4">Sistema ERP & POS</h3>
-                                <span class="badge badge-project-main mt-2">Laravel
-                                        10</span>
+                                <span class="badge badge-project-main mt-2">Laravel 10</span>
                             </div>
                             <div class="col-md-8">
                                 <div class="card-body p-4">
-                                    <h5 class="card-title fw-bold">Sistema Integral de Gestión Empresarial</h5>
-                                    <p class="card-text text-dynamic-muted">
-                                        Sistema robusto para administración de recursos. Gestiona inventarios, compras, ventas y reportes financieros. Implementa
-                                        <strong>patrones de diseño
-                                                sólidos</strong> y validaciones de negocio estrictas.
+                                    <h5 class="card-title fw-bold">SisVentas - Gestión Comercial</h5>
+                                    <p class="card-text text-muted">
+                                        Sistema robusto para administración de recursos empresariales. Gestiona inventarios, compras, ventas y reportes financieros con integridad transaccional.
                                     </p>
                                     <div class="mb-3">
-                                        <span class="badge badge-tech me-1">Arqueo
-                                                de Caja</span>
-                                        <span class="badge badge-tech me-1">Roles
-                                                Spatie</span>
-                                        <span class="badge badge-tech me-1">Transacciones
-                                                ACID</span>
-                                        <span class="badge badge-tech me-1">ChartJS</span>
+                                        <span class="badge badge-tech me-1">Control de Stock</span>
+                                        <span class="badge badge-tech me-1">Arqueo de Caja</span>
+                                        <span class="badge badge-tech me-1">Reportes PDF</span>
                                     </div>
-                                    <ul class="list-unstyled mb-4 text-dynamic-muted small">
-                                        <li><i class="fas fa-check text-accent me-2"></i> Integridad de datos en movimientos de dinero.</li>
-                                        <li><i class="fas fa-check text-accent me-2"></i> Generación de reportes PDF y Excel.
-                                        </li>
+                                    <a href="https://github.com/juan5440/sisventas" target="_blank" class="btn btn-outline-accent btn-sm"><i class="fab fa-github me-1"></i> Ver Código</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-12">
+                    <div class="card project-card mb-4">
+                        <div class="row g-0">
+                            <div class="col-md-4 project-header">
+                                <i class="fas fa-prescription-bottle-alt fa-5x mb-3 text-white-50"></i>
+                                <h3 class="h4">POS Farmacia</h3>
+                                <span class="badge badge-project-main mt-2">Inventario Avanzado</span>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body p-4">
+                                    <h5 class="card-title fw-bold">Sistema de Gestión Farmacéutica</h5>
+                                    <p class="card-text text-muted">
+                                        Software especializado para farmacias con control estricto de inventario. Maneja lotes, fechas de caducidad y alertas de stock mínimo para evitar pérdidas.
+                                    </p>
+                                    <div class="mb-3">
+                                        <span class="badge badge-tech me-1">Control de Lotes</span>
+                                        <span class="badge badge-tech me-1">Vencimientos</span>
+                                        <span class="badge badge-tech me-1">Alertas Stock</span>
+                                    </div>
+                                    <ul class="list-unstyled mb-4 text-muted small">
+                                        <li><i class="fas fa-check text-accent me-2"></i> Gestión por presentación y laboratorio.</li>
                                     </ul>
-                                    <a href="https://github.com/juan5440" class="btn btn-outline-accent btn-sm"><i
-                                                class="fab fa-github me-1"></i>
-                                            Ver Código</a>
+                                    <a href="https://github.com/juan5440/SistemaPos" target="_blank" class="btn btn-outline-accent btn-sm"><i class="fab fa-github me-1"></i> Ver Código</a>
                                 </div>
                             </div>
                         </div>
@@ -397,29 +188,21 @@
                         <div class="row g-0">
                             <div class="col-md-4 project-header">
                                 <i class="fas fa-utensils fa-5x mb-3 text-white-50"></i>
-                                <h3 class="h4">Sistema POS Pupusería</h3>
+                                <h3 class="h4">POS Pupusería</h3>
                                 <span class="badge badge-project-main mt-2">Python 3</span>
                             </div>
                             <div class="col-md-8">
                                 <div class="card-body p-4">
-                                    <h5 class="card-title fw-bold">Gestión de Ventas para Pupusería</h5>
-                                    <p class="card-text text-dynamic-muted">
-                                        Aplicación de escritorio robusta para la gestión de ventas. Incluye control de menú, historial de transacciones y generación de tickets.
-                                        Diseñado con <strong>Tkinter</strong> y <strong>SQLite</strong> para máxima eficiencia local.
+                                    <h5 class="card-title fw-bold">Gestión de Ventas de Escritorio</h5>
+                                    <p class="card-text text-muted">
+                                        Aplicación de escritorio robusta para gestión de ventas rápidas. Incluye control de menú, historial de transacciones y tickets.
                                     </p>
                                     <div class="mb-3">
-                                        <span class="badge badge-tech me-1">Tkinter UI</span>
+                                        <span class="badge badge-tech me-1">Tkinter</span>
                                         <span class="badge badge-tech me-1">SQLite</span>
-                                        <span class="badge badge-tech me-1">Impresión Tickets</span>
-                                        <span class="badge badge-tech me-1">Modo Oscuro</span>
+                                        <span class="badge badge-tech me-1">Impresión</span>
                                     </div>
-                                    <ul class="list-unstyled mb-4 text-dynamic-muted small">
-                                        <li><i class="fas fa-check text-accent me-2"></i> Historial de ventas con zona horaria UTC-6.</li>
-                                        <li><i class="fas fa-check text-accent me-2"></i> Interfaz moderna y responsiva.</li>
-                                    </ul>
-                                    <a href="https://github.com/juan5440/pupuseria-sistema" class="btn btn-outline-accent btn-sm"><i
-                                                class="fab fa-github me-1"></i>
-                                            Ver Código</a>
+                                    <a href="https://github.com/juan5440/pupuseria-sistema" target="_blank" class="btn btn-outline-accent btn-sm"><i class="fab fa-github me-1"></i> Ver Código</a>
                                 </div>
                             </div>
                         </div>
@@ -431,133 +214,80 @@
                         <div class="card-body p-4 d-flex flex-column">
                             <div class="d-flex align-items-center mb-3">
                                 <i class="fas fa-server fa-2x text-primary me-3"></i>
-                                <h5 class="card-title fw-bold mb-0">API RESTful & Backend Logic</h5>
+                                <h5 class="card-title fw-bold mb-0">API RESTful</h5>
                             </div>
-                            <p class="card-text text-dynamic-muted flex-grow-1">
-                                Desarrollo de endpoints seguros para consumo de datos. Implementación de autenticación, Resources de Laravel y manejo eficiente de Eloquent ORM.
-                            </p>
-                            <div class="mb-3">
-                                <span class="badge badge-tech me-1">JSON</span>
-                                <span class="badge badge-tech me-1">Postman</span>
-                                <span class="badge badge-tech me-1">Eloquent</span>
-                            </div>
-                            <a href="https://github.com/juan5440" class="btn btn-outline-primary btn-sm mt-auto">Ver
-                                    Repositorio</a>
+                            <p class="card-text text-muted flex-grow-1">Backend seguro para consumo de datos, autenticación y Eloquent ORM.</p>
+                            <a href="https://github.com/juan5440" class="btn btn-outline-primary btn-sm mt-auto">Ver Repositorio</a>
                         </div>
                     </div>
                 </div>
-
                 <div class="col-md-6">
                     <div class="card project-card h-100">
                         <div class="card-body p-4 d-flex flex-column">
                             <div class="d-flex align-items-center mb-3">
                                 <i class="fas fa-code fa-2x text-warning me-3"></i>
-                                <h5 class="card-title fw-bold mb-0">Componentes Web & Prácticas</h5>
+                                <h5 class="card-title fw-bold mb-0">Componentes Web</h5>
                             </div>
-                            <p class="card-text text-dynamic-muted flex-grow-1">
-                                Colección de componentes UI y lógica de negocio aislada. Pruebas de concepto para nuevas funcionalidades de Laravel y diseño de interfaces.
-                            </p>
-                            <div class="mb-3">
-                                <span class="badge badge-tech me-1">Blade
-                                        Components</span>
-                                <span class="badge badge-tech me-1">JQuery</span>
-                                <span class="badge badge-tech me-1">Git
-                                        Flow</span>
-                            </div>
-                            <a href="https://github.com/juan5440" class="btn btn-outline-warning btn-sm mt-auto">Ver
-                                    Repositorio</a>
+                            <p class="card-text text-muted flex-grow-1">Colección de componentes UI y pruebas de concepto.</p>
+                            <a href="https://github.com/juan5440" class="btn btn-outline-warning btn-sm mt-auto">Ver Repositorio</a>
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
 
-    <section id="contenido" class="py-5">
-        <div class="container">
+    <section id="contenido" class="py-5 position-relative overflow-hidden">
+        <div class="container position-relative z-1">
             <div class="row align-items-center">
                 <div class="col-md-6 mb-4 mb-md-0">
                     <h2 class="fw-bold mb-3">Más allá del Código: <span class="text-accent">Comunicación</span></h2>
-                    <p class="lead text-dynamic-muted">La documentación y la enseñanza son parte fundamental de mi proceso de desarrollo.
-                    </p>
+                    <p class="lead text-muted">La documentación y la enseñanza son parte fundamental de mi proceso de desarrollo.</p>
 
                     <div class="d-flex flex-column gap-3 mt-4">
-                        <div class="content-box d-flex align-items-center p-3 shadow-sm">
+                        <div class="content-box d-flex align-items-center p-3">
                             <i class="fab fa-youtube fa-2x text-danger me-3"></i>
                             <div>
-                                <h6 class="mb-0 fw-bold">Canal de YouTube
-                                </h6>
-                                <small class="text-dynamic-muted">Prácticas
-                                        de programación en vivo.</small>
+                                <h6 class="mb-0 fw-bold">Canal de YouTube</h6>
+                                <small class="text-muted">Prácticas de programación en vivo.</small>
                             </div>
-                            <a href="https://www.youtube.com/@gabriel_soto2342" target="_blank" class="btn btn-sm btn-danger ms-auto d-flex align-items-center justify-content-center" style="width: 100px;">Visitar</a>
+                            <a href="https://www.youtube.com/@gabriel_soto2342" target="_blank" class="btn btn-sm btn-outline-danger ms-auto" style="width: 100px;">Visitar</a>
                         </div>
 
-                        <div class="content-box d-flex align-items-center p-3 shadow-sm">
+                        <div class="content-box d-flex align-items-center p-3">
                             <i class="fas fa-book-open fa-2x text-info me-3"></i>
                             <div>
-                                <h6 class="mb-0 fw-bold">Documentación (Calameo)
-                                </h6>
-                                <small class="text-dynamic-muted">Manuales
-                                        técnicos y guías.</small>
+                                <h6 class="mb-0 fw-bold">Documentación</h6>
+                                <small class="text-muted">Manuales técnicos en Calameo.</small>
                             </div>
-                            <a href="https://www.calameo.com/accounts/6109100" target="_blank" class="btn btn-sm btn-info text-white ms-auto d-flex align-items-center justify-content-center" style="width: 100px;">Leer</a>
+                            <a href="https://www.calameo.com/accounts/6109100" target="_blank" class="btn btn-sm btn-outline-info ms-auto" style="width: 100px;">Leer</a>
                         </div>
                     </div>
                 </div>
+                
                 <div class="col-md-6 text-center">
-                    <i class="fas fa-laptop-code text-accent opacity-25" style="font-size: 12rem;"></i>
+                    <div class="hero-glow" style="right: 10%; top: 20%; background: var(--secondary-accent);"></div>
+                    <img src="images/mas alla del codigo.png" class="img-fluid floating-neon rounded-4" alt="Educación y Código">
                 </div>
             </div>
         </div>
     </section>
 
-    <footer id="contacto" class="bg-dark text-white py-5 text-center">
+    <footer id="contacto" class="py-5 text-center" style="background: var(--bg-card); border-top: 1px solid var(--border-color);">
         <div class="container">
-            <h3 class="h5 mb-4">¿Hablamos de tu próximo proyecto?</h3>
+            <img src="images/Gemini_Generated_Image_ivorn8ivorn8ivor-modified.png" width="60" class="rounded-circle mb-3 border border-2 border-primary">
+            <h3 class="h5 mb-4 text-main">¿Hablamos de tu próximo proyecto?</h3>
             <div class="d-flex justify-content-center gap-4 mb-4">
-                <a href="https://www.linkedin.com/in/juan-gabriel-soto-aldana-b36534218/?originalSubdomain=sv" class="text-white h3 hover-scale"><i
-                            class="fab fa-linkedin"></i></a>
-                <a href="https://github.com/juan5440" class="text-white h3 hover-scale"><i
-                            class="fab fa-github"></i></a>
-                <a href="mailto:tu-email@correo.com" class="text-white h3 hover-scale"><i
-                            class="fas fa-envelope"></i></a>
+                <a href="#" class="text-main h3 hover-scale"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/juan5440" class="text-main h3 hover-scale"><i class="fab fa-github"></i></a>
+                <a href="mailto:tu-email@correo.com" class="text-main h3 hover-scale"><i class="fas fa-envelope"></i></a>
             </div>
-            <small class="opacity-50">&copy; 2025 Juan Gabriel Soto Aldana.
-                    Desarrollado en El Salvador.</small>
+            <small class="text-muted">&copy; 2025 Juan Gabriel Soto Aldana. Desarrollado en El Salvador.</small>
         </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        const toggleBtn = document.querySelector('.theme-toggle');
-        const themeIcon = document.getElementById('theme-icon');
-        const html = document.documentElement;
-
-        // Force Dark Mode by default if not set
-        const savedTheme = localStorage.getItem('theme') || 'dark';
-        html.setAttribute('data-theme', savedTheme);
-        updateIcon(savedTheme);
-
-        function updateIcon(theme) {
-            if (theme === 'dark') {
-                themeIcon.classList.remove('fa-moon');
-                themeIcon.classList.add('fa-sun');
-            } else {
-                themeIcon.classList.remove('fa-sun');
-                themeIcon.classList.add('fa-moon');
-            }
-        }
-
-        function toggleTheme() {
-            const currentTheme = html.getAttribute('data-theme');
-            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-
-            html.setAttribute('data-theme', newTheme);
-            localStorage.setItem('theme', newTheme);
-            updateIcon(newTheme);
-        }
-    </script>
+    <script src="js/script.js"></script>
 </body>
-
 </html>
