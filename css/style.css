@@ -275,3 +275,44 @@ small,
     color: var(--primary-accent) !important;
     transform: scale(1.2);
 }
+
+/* --- ANIMACIONES Y EFECTOS --- */
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.floating-neon {
+    animation: float 6s ease-in-out infinite;
+    transition: var(--transition);
+    /* Aseguramos que no haya bordes ni cuadros */
+    border: none !important;
+    outline: none !important;
+    background: transparent !important;
+}
+
+/* TEMA CLARO: Sombra suave natural */
+[data-theme="light"] .floating-neon {
+    box-shadow: none !important;
+    /* Quitamos la caja */
+    /* drop-shadow sigue la forma de tu imagen PNG */
+    filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.15));
+}
+
+/* TEMA OSCURO: Resplandor Neón que sigue la silueta */
+[data-theme="dark"] .floating-neon {
+    box-shadow: none !important;
+    /* Quitamos la caja */
+    /* Doble drop-shadow para intensidad neón */
+    filter: drop-shadow(0 0 15px rgba(0, 225, 255, 0.4)) drop-shadow(0 0 30px rgba(189, 0, 255, 0.2));
+}
