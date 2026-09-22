@@ -4,292 +4,436 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Juan Gabriel Soto | Portfolio</title>
+    <title>Juan Gabriel Soto | Portafolio Profesional</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
-    <nav class="navbar navbar-expand-lg fixed-top">
-        <div class="container">
-            <a class="navbar-brand fw-bold" href="#">
-                <span class="text-accent">&lt;</span> J. Gabriel Soto <span class="text-accent">/&gt;</span>
-            </a>
+    <!-- NAVBAR ACTUALIZADO -->
+<nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+        <a class="navbar-brand fw-bold d-flex align-items-center gap-2" href="#">
+            <img src="images/Gemini_Generated_Image_ivorn8ivorn8ivor-modified.png" alt="Juan Soto" width="35" class="rounded-circle border border-info">
+            <span>&lt; J. Gabriel Soto /&gt;</span>
+        </a>
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                <ul class="navbar-nav align-items-center">
-                    <li class="nav-item"><a class="nav-link" href="#proyectos">Proyectos</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#skills">Habilidades</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contenido">Contenido</a></li>
-                    
-                    <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
-                        <button class="theme-toggle" onclick="toggleTheme()" aria-label="Cambiar tema" title="Cambiar modo Día/Noche">
-                            <i class="fas fa-sun" id="theme-icon"></i>
-                        </button>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <section class="hero d-flex align-items-center">
-        <div class="container">
-            <div class="row align-items-center flex-column-reverse flex-lg-row">
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav align-items-center">
+                <li class="nav-item"><a class="nav-link" href="#proyectos">Proyectos</a></li>
+                <li class="nav-item"><a class="nav-link" href="#ciberseguridad">Ciberseguridad</a></li>
+                <li class="nav-item"><a class="nav-link" href="#experiencia">Experiencia</a></li>
+                <li class="nav-item"><a class="nav-link" href="#skills">Habilidades</a></li>
+                <li class="nav-item"><a class="nav-link" href="#certificaciones">Anexos</a></li>
                 
-                <div class="col-lg-6 text-center text-lg-start mt-5 mt-lg-0">
-                    <div class="badge-tech d-inline-block px-3 py-1 rounded-pill mb-3">
-                        <i class="fas fa-code me-2"></i>Full Stack Developer
-                    </div>
-                    <h1 class="display-4 fw-bold mb-3">
-                        Hola, soy <span class="text-gradient">Juan Gabriel</span>
-                    </h1>
-                    <p class="text-lg sm:text-xl text-slate-400 max-w-2xl leading-relaxed">
-                        Licenciado en Ciencias de la Computación especializado en **Desarrollo Full-Stack** y **Ciberseguridad**. Construyo soluciones web sólidas, eficientes y blindadas.
-                    </p>
+                <!-- ENLACE DIRECTO AL CURRÍCULUM AGREGADO -->
+                <li class="nav-item ms-lg-2">
+                    <a class="nav-link text-info fw-bold" href="https://drive.google.com/file/d/1i7XI8xL2J-yZDxSNkGLbYdgfPmr3N-cY/view?usp=drive_link" target="_blank">
+                        <i class="fas fa-file-pdf me-1"></i> CV
+                    </a>
+                </li>
 
-                    <div class="d-flex justify-content-center justify-content-lg-start gap-3">
-                        <a href="https://github.com/juan5440" target="_blank" class="btn btn-accent">
-                            <i class="fab fa-github me-2"></i> GitHub
-                        </a>
-                        <a href="https://www.linkedin.com/in/juan-gabriel-soto-aldana-b36534218/?originalSubdomain=sv" target="_blank" class="btn btn-outline-accent">
-                            <i class="fab fa-linkedin me-2"></i> LinkedIn
-                        </a>
-                    </div>
+                <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+                    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Cambiar tema">
+                        <i class="fas fa-sun" id="theme-icon"></i>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- HERO SECTION CON ESPACIADO CORREGIDO -->
+<section class="hero d-flex align-items-center pt-5">
+    <div class="container pt-lg-5">
+        <div class="row align-items-center flex-column-reverse flex-lg-row">
+            <div class="col-lg-7 text-center text-lg-start mt-4 mt-lg-5">
+                <div class="badge-tech d-inline-block px-3 py-1 rounded-pill mb-3">
+                    <i class="fas fa-shield-alt me-2"></i>Lic. en Ciencias de la Computación
                 </div>
+                <h1 class="display-4 fw-bold mb-3">
+                    Juan Gabriel <span class="text-gradient">Soto Aldana</span>
+                </h1>
+                <p class="lead mb-4 text-muted">
+                    Especialista en <strong>Desarrollo Full-Stack</strong> (PHP, Laravel, Python, MySQL) y <strong>Ciberseguridad</strong> (Hacking Ético, Redes Cisco). Construyo soluciones de software robustas, escalables y blindadas.
+                </p>
 
-               <div class="col-lg-6 text-center position-relative">
-                    <div class="hero-glow"></div>
-                        <img id="hero-image" src="images/noche.png" 
-                            alt="Setup Desarrollo" 
-                            class="img-fluid floating-neon position-relative z-1"
-                            style="max-width: 90%;">
+                <div class="d-flex flex-wrap justify-content-center justify-content-lg-start gap-3">
+                    <a href="https://github.com/juan5440" target="_blank" class="btn btn-accent">
+                        <i class="fab fa-github me-2"></i> GitHub
+                    </a>
+                    <a href="https://www.linkedin.com/in/juan-gabriel-soto-aldana-b36534218/?originalSubdomain=sv" target="_blank" class="btn btn-outline-accent">
+                        <i class="fab fa-linkedin me-2"></i> LinkedIn
+                    </a>
+                    <a href="https://drive.google.com/file/d/1i7XI8xL2J-yZDxSNkGLbYdgfPmr3N-cY/view?usp=drive_link" target="_blank" class="btn btn-outline-info">
+                        <i class="fas fa-file-alt me-2"></i> Ver CV
+                    </a>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <section id="skills" class="container py-5">
-        <div class="text-center mb-5">
-            <h6 class="text-uppercase text-accent fw-bold ls-2">Tecnologías</h6>
-            <h2 class="fw-bold">Mi Arsenal Tecnológico</h2>
+            <!-- IMAGEN BAJADA Y SEPARADA DEL MENÚ -->
+            <div class="col-lg-5 text-center position-relative mt-5 mt-lg-4">
+                <div class="hero-glow"></div>
+                <img id="hero-image" src="images/noche.png" alt="Setup de Desarrollo" class="img-fluid floating-neon position-relative z-1 hero-img-adjusted" style="max-width: 85%;">
+            </div>
         </div>
-        
-        <div class="row g-4 justify-content-center">
-            <div class="col-6 col-md-3 col-lg-2"><div class="tech-card h-100 text-center"><i class="fab fa-laravel fa-2x text-accent mb-2"></i><div class="fw-bold">Laravel</div></div></div>
-            <div class="col-6 col-md-3 col-lg-2"><div class="tech-card h-100 text-center"><i class="fab fa-php fa-2x text-primary mb-2"></i><div class="fw-bold">PHP 8</div></div></div>
-            <div class="col-6 col-md-3 col-lg-2"><div class="tech-card h-100 text-center"><i class="fas fa-database fa-2x text-warning mb-2"></i><div class="fw-bold">MySQL</div></div></div>
-            <div class="col-6 col-md-3 col-lg-2"><div class="tech-card h-100 text-center"><i class="fab fa-git-alt fa-2x text-accent mb-2"></i><div class="fw-bold">Git</div></div></div>
-            <div class="col-6 col-md-3 col-lg-2"><div class="tech-card h-100 text-center"><i class="fas fa-cube fa-2x text-muted mb-2"></i><div class="fw-bold">Composer</div></div></div>
-            <div class="col-6 col-md-3 col-lg-2"><div class="tech-card h-100 text-center"><i class="fab fa-js fa-2x text-warning mb-2"></i><div class="fw-bold">JavaScript</div></div></div>
-            <div class="col-6 col-md-3 col-lg-2"><div class="tech-card h-100 text-center"><i class="fab fa-bootstrap fa-2x text-info mb-2"></i><div class="fw-bold">AdminLTE</div></div></div>
-            <div class="col-6 col-md-3 col-lg-2"><div class="tech-card h-100 text-center"><i class="fab fa-python fa-2x text-muted mb-2"></i><div class="fw-bold">Python</div></div></div>
-            <div class="col-6 col-md-3 col-lg-2"><div class="tech-card h-100 text-center"><i class="fab fa-linux fa-2x text-muted mb-2"></i><div class="fw-bold">Linux Mint</div></div></div>
-            <div class="col-6 col-md-3 col-lg-2"><div class="tech-card h-100 text-center"><i class="fab fa-html5 fa-2x text-muted mb-2"></i><div class="fw-bold">HTML5</div></div></div>
-            <div class="col-6 col-md-3 col-lg-2"><div class="tech-card h-100 text-center"><i class="fab fa-css3 fa-2x text-muted mb-2"></i><div class="fw-bold">CSS3</div></div></div>
-        </div>
-    </section>
+    </div>
+</section>
 
+    <!-- PROYECTOS DESTACADOS -->
     <section id="proyectos" class="py-5">
         <div class="container">
             <div class="text-center mb-5">
+                <h6 class="text-uppercase text-accent fw-bold">Portafolio de Software</h6>
                 <h2 class="fw-bold">Proyectos Destacados</h2>
-                <p class="text-muted">Soluciones desarrolladas desde el análisis hasta el despliegue</p>
+                <p class="text-muted">Sistemas completos desarrollados desde la arquitectura de BD hasta el despliegue</p>
             </div>
 
             <div class="row g-4">
-                
                 <div class="col-lg-6">
-                    <div class="card project-card h-100 d-flex flex-column">
+                    <div class="card project-card h-100">
                         <div class="project-header" style="background: linear-gradient(135deg, #0f172a 0%, #334155 100%);">
-                            <div class="d-flex justify-content-between align-items-start w-100">
+                            <div class="d-flex justify-content-between align-items-center">
                                 <i class="fas fa-tooth fa-3x text-accent"></i>
-                                <span class="badge badge-project-main">PHP & MySQL</span>
+                                <span class="badge badge-tech">PHP & MySQL</span>
                             </div>
-                            <h3 class="h5 mt-3 fw-bold">Sistema Dental</h3>
+                            <h3 class="h5 mt-3 fw-bold mb-0">Sistema Dental Integral</h3>
                         </div>
                         <div class="card-body p-4 d-flex flex-column">
                             <p class="card-text text-muted flex-grow-1">
-                                Plataforma integral para clínicas odontológicas. Incluye <strong>odontograma interactivo</strong>, historial clínico digital y agenda de citas inteligente.
+                                Plataforma clínica completa con odontograma digital interactivo, agenda de citas y módulo de expediente clínico seguro.
                             </p>
                             <div class="mb-3">
-                                <span class="badge badge-tech me-1">Agenda</span>
-                                <span class="badge badge-tech me-1">Historial</span>
                                 <span class="badge badge-tech me-1">Odontograma</span>
+                                <span class="badge badge-tech me-1">Expedientes</span>
+                                <span class="badge badge-tech me-1">Bootstrap 4</span>
                             </div>
-                            <a href="https://github.com/juan5440/dental-actualizado" target="_blank" class="btn btn-outline-accent btn-sm mt-auto w-100">
-                                <i class="fab fa-github me-1"></i> Ver Código
+                            <a href="https://github.com/juan5440/dental-actualizado" target="_blank" class="btn btn-outline-accent btn-sm w-100 mt-auto">
+                                <i class="fab fa-github me-1"></i> Ver Repositorio
                             </a>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-lg-6">
-                    <div class="card project-card h-100 d-flex flex-column">
+                    <div class="card project-card h-100">
                         <div class="project-header" style="background: linear-gradient(135deg, #1e1b4b 0%, #312e81 100%);">
-                            <div class="d-flex justify-content-between align-items-start w-100">
-                                <i class="fas fa-cash-register fa-3x text-white-50"></i>
-                                <span class="badge badge-project-main">Laravel 10</span>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <i class="fas fa-cash-register fa-3x text-accent"></i>
+                                <span class="badge badge-tech">Laravel 10</span>
                             </div>
-                            <h3 class="h5 mt-3 fw-bold">ERP & POS Comercial</h3>
+                            <h3 class="h5 mt-3 fw-bold mb-0">ERP & POS Comercial</h3>
                         </div>
                         <div class="card-body p-4 d-flex flex-column">
                             <p class="card-text text-muted flex-grow-1">
-                                Sistema robusto para gestión de recursos. Controla inventarios, <strong>arqueos de caja</strong> con seguridad transaccional y reportes PDF.
+                                Sistema de inventario y punto de venta comercial con arqueos de caja en tiempo real, gestión transaccional y reportes dinámicos.
                             </p>
                             <div class="mb-3">
-                                <span class="badge badge-tech me-1">Control Stock</span>
-                                <span class="badge badge-tech me-1">Caja</span>
-                                <span class="badge badge-tech me-1">Reportes</span>
+                                <span class="badge badge-tech me-1">Arqueo de Caja</span>
+                                <span class="badge badge-tech me-1">Inventario</span>
+                                <span class="badge badge-tech me-1">PDF Reports</span>
                             </div>
-                            <a href="https://github.com/juan5440/sisventas" target="_blank" class="btn btn-outline-accent btn-sm mt-auto w-100">
-                                <i class="fab fa-github me-1"></i> Ver Código
+                            <a href="https://github.com/juan5440/sisventas" target="_blank" class="btn btn-outline-accent btn-sm w-100 mt-auto">
+                                <i class="fab fa-github me-1"></i> Ver Repositorio
                             </a>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-lg-6">
-                    <div class="card project-card h-100 d-flex flex-column">
+                    <div class="card project-card h-100">
                         <div class="project-header" style="background: linear-gradient(135deg, #064e3b 0%, #065f46 100%);">
-                            <div class="d-flex justify-content-between align-items-start w-100">
-                                <i class="fas fa-prescription-bottle-alt fa-3x text-white-50"></i>
-                                <span class="badge badge-project-main">Inventario Pro</span>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <i class="fas fa-prescription-bottle-alt fa-3x text-accent"></i>
+                                <span class="badge badge-tech">CodeIgniter 4</span>
                             </div>
-                            <h3 class="h5 mt-3 fw-bold">POS Farmacia</h3>
+                            <h3 class="h5 mt-3 fw-bold mb-0">POS Farmacia & Control de Lotes</h3>
                         </div>
                         <div class="card-body p-4 d-flex flex-column">
                             <p class="card-text text-muted flex-grow-1">
-                                Software especializado con control estricto de <strong>lotes y vencimientos</strong>. Alertas automáticas de stock mínimo y gestión por laboratorios.
+                                Control especializado de trazabilidad de medicamentos, vencimientos de stock y alertas automáticas por fecha de caducidad.
                             </p>
                             <div class="mb-3">
                                 <span class="badge badge-tech me-1">Lotes</span>
                                 <span class="badge badge-tech me-1">Vencimientos</span>
-                                <span class="badge badge-tech me-1">Alertas</span>
+                                <span class="badge badge-tech me-1">CodeIgniter</span>
                             </div>
-                            <a href="https://github.com/juan5440/SistemaPos" target="_blank" class="btn btn-outline-accent btn-sm mt-auto w-100">
-                                <i class="fab fa-github me-1"></i> Ver Código
+                            <a href="https://github.com/juan5440/SistemaPos" target="_blank" class="btn btn-outline-accent btn-sm w-100 mt-auto">
+                                <i class="fab fa-github me-1"></i> Ver Repositorio
                             </a>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-lg-6">
-                    <div class="card project-card h-100 d-flex flex-column">
+                    <div class="card project-card h-100">
                         <div class="project-header" style="background: linear-gradient(135deg, #7c2d12 0%, #9a3412 100%);">
-                            <div class="d-flex justify-content-between align-items-start w-100">
-                                <i class="fas fa-utensils fa-3x text-white-50"></i>
-                                <span class="badge badge-project-main">Python 3</span>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <i class="fas fa-utensils fa-3x text-accent"></i>
+                                <span class="badge badge-tech">Python 3 & Tkinter</span>
                             </div>
-                            <h3 class="h5 mt-3 fw-bold">POS Restaurante</h3>
+                            <h3 class="h5 mt-3 fw-bold mb-0">POS Desktop Restaurante</h3>
                         </div>
                         <div class="card-body p-4 d-flex flex-column">
                             <p class="card-text text-muted flex-grow-1">
-                                Aplicación de escritorio ágil para toma de pedidos y facturación. Interfaz táctil optimizada con <strong>Tkinter</strong> y base de datos local SQLite.
+                                Aplicación táctil de escritorio para rápida emisión de comandas, facturación local e integración con base de datos SQLite.
                             </p>
                             <div class="mb-3">
-                                <span class="badge badge-tech me-1">Escritorio</span>
-                                <span class="badge badge-tech me-1">Impresión</span>
+                                <span class="badge badge-tech me-1">Desktop UI</span>
                                 <span class="badge badge-tech me-1">SQLite</span>
+                                <span class="badge badge-tech me-1">Python</span>
                             </div>
-                            <a href="https://github.com/juan5440/pupuseria-sistema" target="_blank" class="btn btn-outline-accent btn-sm mt-auto w-100">
-                                <i class="fab fa-github me-1"></i> Ver Código
+                            <a href="https://github.com/juan5440/pupuseria-sistema" target="_blank" class="btn btn-outline-accent btn-sm w-100 mt-auto">
+                                <i class="fab fa-github me-1"></i> Ver Repositorio
                             </a>
                         </div>
                     </div>
                 </div>
-
-                <div class="col-lg-6">
-                    <div class="card project-card h-100 d-flex flex-column">
-                        <div class="card-body p-4 d-flex flex-column border-start border-4 border-primary">
-                            <div class="d-flex align-items-center mb-3">
-                                <i class="fas fa-server fa-2x text-primary me-3"></i>
-                                <h5 class="card-title fw-bold mb-0">API RESTful Backend</h5>
-                            </div>
-                            <p class="card-text text-muted flex-grow-1 small">
-                                Backend seguro para consumo de datos, autenticación JWT/Sanctum y transformación de recursos con Eloquent ORM.
-                            </p>
-                            <a href="https://github.com/juan5440" class="btn btn-sm btn-outline-primary mt-auto w-100">Ver Repo</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-6">
-                    <div class="card project-card h-100 d-flex flex-column">
-                        <div class="card-body p-4 d-flex flex-column border-start border-4 border-warning">
-                            <div class="d-flex align-items-center mb-3">
-                                <i class="fas fa-code fa-2x text-warning me-3"></i>
-                                <h5 class="card-title fw-bold mb-0">Componentes Web</h5>
-                            </div>
-                            <p class="card-text text-muted flex-grow-1 small">
-                                Colección de componentes UI reutilizables y pruebas de concepto para interfaces modernas con Blade y JS.
-                            </p>
-                            <a href="https://github.com/juan5440" class="btn btn-sm btn-outline-warning mt-auto w-100">Ver Repo</a>
-                        </div>
-                    </div>
-                </div>
-
             </div>
         </div>
     </section>
 
-    <section id="contenido" class="py-5 position-relative overflow-hidden">
-        <div class="container position-relative z-1">
+    <!-- CIBERSEGURIDAD & REDES -->
+    <section id="ciberseguridad" class="py-5 bg-card-section">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h6 class="text-uppercase text-accent fw-bold">Especialización Técnica</h6>
+                <h2 class="fw-bold">Ciberseguridad & Redes</h2>
+                <p class="text-muted">Protección de activos, mitigación de riesgos y gestión de infraestructura</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="tech-card h-100 p-4 text-center">
+                        <i class="fas fa-user-ninja fa-3x text-accent mb-3"></i>
+                        <h5 class="fw-bold">Hacking Ético</h5>
+                        <p class="small text-muted mb-0">Pruebas de penetración, análisis forense digital e identificación de vulnerabilidades.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="tech-card h-100 p-4 text-center">
+                        <i class="fas fa-shield-alt fa-3x text-accent mb-3"></i>
+                        <h5 class="fw-bold">Seguridad Informática</h5>
+                        <p class="small text-muted mb-0">Implementación de políticas de seguridad, cifrado de datos y protección contra amenazas cibernéticas.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="tech-card h-100 p-4 text-center">
+                        <i class="fas fa-network-wired fa-3x text-accent mb-3"></i>
+                        <h5 class="fw-bold">Redes Cisco</h5>
+                        <p class="small text-muted mb-0">Configuración e implementación de infraestructura de datos mediante Cisco Packet Tracer.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="tech-card h-100 p-4 text-center">
+                        <i class="fab fa-windows fa-3x text-accent mb-3"></i>
+                        <h5 class="fw-bold">Windows Server</h5>
+                        <p class="small text-muted mb-0">Administración de Windows Server 2019, Active Directory y soluciones empresariales.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EXPERIENCIA LABORAL -->
+    <section id="experiencia" class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h6 class="text-uppercase text-accent fw-bold">Trayectoria</h6>
+                <h2 class="fw-bold">Experiencia Profesional</h2>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="badge badge-tech mb-2">Dic 2020 – Abr 2021</span>
+                        <h4 class="fw-bold h5">Desarrollador de Software</h4>
+                        <p class="text-accent small mb-2">Venta de Medicina Bendición de Dios</p>
+                        <ul class="small text-muted ps-3 mb-0">
+                            <li>Diseño y arquitectura de la base de datos relacional MySQL.</li>
+                            <li>Desarrollo de módulos del sistema en PHP (CodeIgniter 4) y JavaScript.</li>
+                            <li>Creación de reportes dinámicos con filtros por fechas.</li>
+                            <li>Implementación de prácticas ágiles con Scrum.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="badge badge-tech mb-2">Jul 2020 – Nov 2020</span>
+                        <h4 class="fw-bold h5">Desarrollador de Software</h4>
+                        <p class="text-accent small mb-2">Clínica Dental Integral</p>
+                        <ul class="small text-muted ps-3 mb-0">
+                            <li>Desarrollo de plataforma web con PHP, JS y Bootstrap 4.</li>
+                            <li>Modelado de BD MySQL para expediente e historial de citas.</li>
+                            <li>Diseño de reportes administrativos y de seguimiento.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="badge badge-tech mb-2">2024 / 2026</span>
+                        <h4 class="fw-bold h5">Asistente de Gestión de Inventarios</h4>
+                        <p class="text-accent small mb-2">Ferretería Comercial</p>
+                        <ul class="small text-muted ps-3 mb-0">
+                            <li>Implementé la clasificación y codificación de stock en sistema y almacén, garantizando la trazabilidad exacta de existencias[cite: 2].</li>
+                            <li>Administración de ventas, facturación fiscal y comprobantes[cite: 2].</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HABILIDADES TÉCNICAS -->
+    <section id="skills" class="py-5 bg-card-section">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h6 class="text-uppercase text-accent fw-bold">Stack Tecnológico</h6>
+                <h2 class="fw-bold">Mi Arsenal de Herramientas</h2>
+            </div>
+
+            <div class="row g-3 justify-content-center">
+                <div class="col-6 col-md-3 col-lg-2"><div class="tech-card text-center p-3"><i class="fab fa-laravel fa-2x text-accent mb-2"></i><div class="fw-bold small">Laravel</div></div></div>
+                <div class="col-6 col-md-3 col-lg-2"><div class="tech-card text-center p-3"><i class="fab fa-php fa-2x text-accent mb-2"></i><div class="fw-bold small">PHP 8</div></div></div>
+                <div class="col-6 col-md-3 col-lg-2"><div class="tech-card text-center p-3"><i class="fab fa-python fa-2x text-accent mb-2"></i><div class="fw-bold small">Python</div></div></div>
+                <div class="col-6 col-md-3 col-lg-2"><div class="tech-card text-center p-3"><i class="fas fa-database fa-2x text-accent mb-2"></i><div class="fw-bold small">MySQL / SQL</div></div></div>
+                <div class="col-6 col-md-3 col-lg-2"><div class="tech-card text-center p-3"><i class="fab fa-js fa-2x text-accent mb-2"></i><div class="fw-bold small">JavaScript</div></div></div>
+                <div class="col-6 col-md-3 col-lg-2"><div class="tech-card text-center p-3"><i class="fab fa-git-alt fa-2x text-accent mb-2"></i><div class="fw-bold small">Git / GitHub</div></div></div>
+                <div class="col-6 col-md-3 col-lg-2"><div class="tech-card text-center p-3"><i class="fab fa-linux fa-2x text-accent mb-2"></i><div class="fw-bold small">Linux Mint</div></div></div>
+                <div class="col-6 col-md-3 col-lg-2"><div class="tech-card text-center p-3"><i class="fab fa-bootstrap fa-2x text-accent mb-2"></i><div class="fw-bold small">Bootstrap 4/5</div></div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CERTIFICACIONES Y ANEXOS -->
+    <section id="certificaciones" class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h6 class="text-uppercase text-accent fw-bold">Acreditaciones</h6>
+                <h2 class="fw-bold">Educación & Anexos Certificados</h2>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="tech-card p-4 h-100">
+                        <i class="fas fa-graduation-cap fa-2x text-accent mb-3"></i>
+                        <h5 class="fw-bold h6">Licenciatura en Ciencias de la Computación</h5>
+                        <p class="small text-muted">Universidad Luterana Salvadoreña (2016 – 2021)</p>
+                        <span class="badge badge-tech">Anexo A</span>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="tech-card p-4 h-100">
+                        <i class="fas fa-shield-alt fa-2x text-accent mb-3"></i>
+                        <h5 class="fw-bold h6">Hacking Ético & Seguridad Informática</h5>
+                        <p class="small text-muted">Especialización de 112 Horas – ULS (2021)</p>
+                        <span class="badge badge-tech">Anexo B</span>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="tech-card p-4 h-100">
+                        <i class="fas fa-user-shield fa-2x text-accent mb-3"></i>
+                        <h5 class="fw-bold h6">Ciberseguridad: Ataque y Defensa</h5>
+                        <p class="small text-muted">Diplomado de 72 Horas – FORMÁS / FEDISAL (2022)</p>
+                        <span class="badge badge-tech">Anexo C</span>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="tech-card p-4 h-100">
+                        <i class="fas fa-network-wired fa-2x text-accent mb-3"></i>
+                        <h5 class="fw-bold h6">Redes de Datos con Equipo Cisco</h5>
+                        <p class="small text-muted">Especialización de 60 Horas – FEDISAL / MINEC / BID (2022)</p>
+                        <span class="badge badge-tech">Anexo D</span>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="tech-card p-4 h-100">
+                        <i class="fab fa-python fa-2x text-accent mb-3"></i>
+                        <h5 class="fw-bold h6">Programación Microsoft para Python</h5>
+                        <p class="small text-muted">Curso de 24 Horas – INSAFORP / FEDISAL (2021)</p>
+                        <span class="badge badge-tech">Anexo E</span>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="tech-card p-4 h-100">
+                        <i class="fab fa-windows fa-2x text-accent mb-3"></i>
+                        <h5 class="fw-bold h6">Windows Server 2019</h5>
+                        <p class="small text-muted">Implementación y Administración Empresarial (2022)</p>
+                        <span class="badge badge-tech">Certificado</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- COMUNICACIÓN / CONTENIDO -->
+    <section id="contenido" class="py-5 bg-card-section">
+        <div class="container">
             <div class="row align-items-center">
                 <div class="col-md-6 mb-4 mb-md-0">
-                    <h2 class="fw-bold mb-3">Más allá del Código: <span class="text-accent">Comunicación</span></h2>
-                    <p class="lead text-muted">La documentación y la enseñanza son parte fundamental de mi proceso de desarrollo.</p>
+                    <h2 class="fw-bold mb-3">Más allá del Código: <span class="text-accent">Comunicación & Docencia</span></h2>
+                    <p class="text-muted">La documentación clara y la creación de contenido educativo son clave para mi perfil profesional.</p>
 
                     <div class="d-flex flex-column gap-3 mt-4">
                         <div class="content-box d-flex align-items-center p-3">
                             <i class="fab fa-youtube fa-2x text-danger me-3"></i>
                             <div>
                                 <h6 class="mb-0 fw-bold">Canal de YouTube</h6>
-                                <small class="text-muted">Prácticas de programación en vivo.</small>
+                                <small class="text-muted">Tutoriales y prácticas de código en vivo.</small>
                             </div>
-                            <a href="https://www.youtube.com/@gabriel_soto2342" target="_blank" class="btn btn-sm btn-outline-danger ms-auto" style="width: 100px;">Visitar</a>
+                            <a href="https://www.youtube.com/@gabriel_soto2342" target="_blank" class="btn btn-sm btn-outline-danger ms-auto">Visitar</a>
                         </div>
 
                         <div class="content-box d-flex align-items-center p-3">
                             <i class="fas fa-book-open fa-2x text-info me-3"></i>
                             <div>
-                                <h6 class="mb-0 fw-bold">Documentación</h6>
-                                <small class="text-muted">Manuales técnicos en Calameo.</small>
+                                <h6 class="mb-0 fw-bold">Publicaciones & Documentación</h6>
+                                <small class="text-muted">Manuales técnicos guardados en Calaméo.</small>
                             </div>
-                            <a href="https://www.calameo.com/accounts/6109100" target="_blank" class="btn btn-sm btn-outline-info ms-auto" style="width: 100px;">Leer</a>
+                            <a href="https://www.calameo.com/accounts/6109100" target="_blank" class="btn btn-sm btn-outline-info ms-auto">Leer</a>
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="col-md-6 text-center">
-                    <div class="hero-glow" style="right: 10%; top: 20%; background: var(--secondary-accent);"></div>
-                    <img src="images/mas alla del codigo.png" class="img-fluid floating-neon rounded-4" alt="Educación y Código">
+                    <img src="images/mas alla del codigo.png" class="img-fluid floating-neon rounded-4" alt="Educación" style="max-width: 85%;">
                 </div>
             </div>
         </div>
     </section>
 
-    <footer id="contacto" class="py-5 text-center" style="background: var(--bg-card); border-top: 1px solid var(--border-color);">
+    <!-- FOOTER -->
+    <footer id="contacto" class="py-5 text-center">
         <div class="container">
-            <img src="images/Gemini_Generated_Image_ivorn8ivorn8ivor-modified.png" width="60" class="rounded-circle mb-3 border border-2 border-primary">
-            <h3 class="h5 mb-4 text-main">¿Hablamos de tu próximo proyecto?</h3>
+            <img src="images/Gemini_Generated_Image_ivorn8ivorn8ivor-modified.png" width="70" class="rounded-circle mb-3 border border-2 border-info">
+            <h3 class="h5 mb-2">¿Interesado en colaborar o contratar?</h3>
+            <p class="text-muted small mb-4">Ubicado en Santa Ana, El Salvador | Disponible para trabajo remoto o presencial.</p>
+            
             <div class="d-flex justify-content-center gap-4 mb-4">
-                <a href="#" class="text-main h3 hover-scale"><i class="fab fa-linkedin"></i></a>
-                <a href="https://github.com/juan5440" class="text-main h3 hover-scale"><i class="fab fa-github"></i></a>
-                <a href="mailto:tu-email@correo.com" class="text-main h3 hover-scale"><i class="fas fa-envelope"></i></a>
+                <a href="https://github.com/juan5440" target="_blank" class="text-main h3 hover-scale"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/juan-gabriel-soto-aldana-b36534218/?originalSubdomain=sv" target="_blank" class="text-main h3 hover-scale"><i class="fab fa-linkedin"></i></a>
+                <a href="mailto:gsoto5440@gmail.com" class="text-main h3 hover-scale"><i class="fas fa-envelope"></i></a>
             </div>
-            <small class="text-muted">&copy; 2025 Juan Gabriel Soto Aldana. Desarrollado en El Salvador.</small>
+            <small class="text-muted">&copy; 2026 Juan Gabriel Soto Aldana. Todos los derechos reservados.</small>
         </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/script.js"></script>
 </body>
+
 </html>
