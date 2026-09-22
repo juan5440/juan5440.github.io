@@ -1,55 +1,31 @@
-/* --- Variables CSS Globales --- */
 :root {
     --primary-accent: #05e1fe;
-    /* Cyan Eléctrico */
     --secondary-accent: #b52ce7;
-    /* Morado Neón */
     --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* --- TEMA CLARO --- */
+/* TEMA CLARO */
 [data-theme="light"] {
-    --bg-body: #f3f4f6;
+    --bg-body: #f8fafc;
     --bg-card: #ffffff;
-    --text-main: #111827;
-    /* Negro para títulos */
-    --text-muted: #4b5563;
-    /* Gris oscuro para párrafos */
-    --border-color: #e5e7eb;
-
-    /* Navbar Día */
+    --bg-card-section: #f1f5f9;
+    --text-main: #0f172a;
+    --text-muted: #475569;
+    --border-color: #e2e8f0;
     --nav-bg: rgba(255, 255, 255, 0.85);
-    --nav-text: #1f2937;
-    --nav-border: rgba(0, 0, 0, 0.05);
-
-    /* Overlay Día */
-    --hero-overlay: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(243, 244, 246, 0.95) 100%);
-
-    --shadow-card: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-    --btn-hover-bg: rgba(99, 102, 241, 0.1);
+    --shadow-card: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
-/* --- TEMA OSCURO --- */
+/* TEMA OSCURO */
 [data-theme="dark"] {
-    --bg-body: #0f172a;
-    /* Azul noche */
-    --bg-card: #1e293b;
+    --bg-body: #0b1120;
+    --bg-card: #152035;
+    --bg-card-section: #0f172a;
     --text-main: #f8fafc;
-    /* Blanco para títulos */
     --text-muted: #94a3b8;
-    /* Gris claro para párrafos */
-    --border-color: #334155;
-
-    /* Navbar Noche */
-    --nav-bg: rgba(15, 23, 42, 0.8);
-    --nav-text: #f1f5f9;
-    --nav-border: rgba(255, 255, 255, 0.1);
-
-    /* Overlay Noche */
-    --hero-overlay: linear-gradient(135deg, rgba(15, 23, 42, 0.9) 0%, rgba(30, 41, 59, 0.95) 100%);
-
-    --shadow-card: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
-    --btn-hover-bg: rgba(255, 255, 255, 0.1);
+    --border-color: #1e293b;
+    --nav-bg: rgba(11, 17, 32, 0.85);
+    --shadow-card: 0 10px 25px rgba(0, 0, 0, 0.4);
 }
 
 body {
@@ -59,25 +35,12 @@ body {
     transition: var(--transition);
 }
 
-/* --- CORRECCIÓN DEFINITIVA DE TEXTOS --- */
-/* Forzamos que estas clases usen nuestra variable, no la de Bootstrap */
-.text-muted,
-.text-secondary,
-.text-dynamic-muted,
-small,
-.small {
+.bg-card-section {
+    background-color: var(--bg-card-section);
+}
+
+.text-muted {
     color: var(--text-muted) !important;
-}
-
-/* En modo oscuro, aclaramos aún más los textos pequeños para que se lean bien */
-[data-theme="dark"] .text-muted,
-[data-theme="dark"] small {
-    color: #cbd5e1 !important;
-    /* Gris muy claro, casi blanco */
-}
-
-.text-main {
-    color: var(--text-main) !important;
 }
 
 .text-accent {
@@ -85,146 +48,83 @@ small,
 }
 
 .text-gradient {
-    background: linear-gradient(to right, var(--primary-accent), var(--secondary-accent));
+    background: linear-gradient(135deg, var(--primary-accent), var(--secondary-accent));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    font-weight: 800;
 }
 
-/* --- NAVBAR --- */
+/* NAVBAR */
 .navbar {
     background-color: var(--nav-bg) !important;
     backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--nav-border);
-    transition: var(--transition);
+    border-bottom: 1px solid var(--border-color);
 }
 
-.navbar-brand,
-.nav-link {
-    color: var(--nav-text) !important;
-    font-weight: 500;
-    transition: var(--transition);
+.navbar-brand, .nav-link {
+    color: var(--text-main) !important;
 }
 
 .nav-link:hover {
     color: var(--primary-accent) !important;
-    transform: translateY(-1px);
 }
 
-.navbar-toggler {
-    border-color: var(--nav-text);
-}
-
-.navbar-toggler-icon {
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(130, 130, 130, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-    filter: invert(1) grayscale(100%) brightness(200%);
-}
-
-[data-theme="light"] .navbar-toggler-icon {
-    filter: invert(0) grayscale(100%) brightness(0%);
-}
-
-/* --- BOTÓN DE TEMA --- */
 .theme-toggle {
     background: transparent;
     border: 1px solid var(--border-color);
-    color: var(--nav-text);
-    width: 45px;
-    height: 45px;
+    color: var(--text-main);
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     cursor: pointer;
-    transition: all 0.3s ease;
-    font-size: 1.2rem;
-}
-
-.theme-toggle:hover {
-    background-color: var(--btn-hover-bg);
-    border-color: var(--primary-accent);
-    color: var(--primary-accent);
-    transform: rotate(15deg) scale(1.05);
-    box-shadow: 0 0 15px rgba(0, 225, 255, 0.3);
-}
-
-/* --- HERO SECTION --- */
-.hero {
-    background: var(--hero-overlay), url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    padding: 160px 0 120px;
-    position: relative;
-    clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
-}
-
-.hero-glow {
-    position: absolute;
-    width: 300px;
-    height: 300px;
-    background: var(--primary-accent);
-    filter: blur(100px);
-    opacity: 0.2;
-    border-radius: 50%;
-    z-index: 0;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     transition: var(--transition);
 }
 
-/* --- CARDS & BOTONES --- */
-.tech-card,
-.project-card,
-.content-box {
+.theme-toggle:hover {
+    border-color: var(--primary-accent);
+    color: var(--primary-accent);
+}
+
+/* CARDS */
+.tech-card, .project-card, .content-box {
     background: var(--bg-card);
     border: 1px solid var(--border-color);
     border-radius: 16px;
-    padding: 20px;
-    color: var(--text-main);
     transition: var(--transition);
     box-shadow: var(--shadow-card);
 }
 
-.tech-card:hover,
-.content-box:hover {
+.tech-card:hover, .project-card:hover {
     transform: translateY(-5px);
     border-color: var(--primary-accent);
-    box-shadow: 0 10px 30px rgba(99, 102, 241, 0.2);
 }
 
 .project-header {
-    background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
-    padding: 30px;
+    padding: 24px;
     color: white;
-    text-align: center;
-    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
 }
 
+/* BOTONES & BADGES */
 .btn-accent {
     background-color: var(--primary-accent);
     color: #000;
-    border: none;
-    padding: 10px 25px;
-    border-radius: 8px;
     font-weight: 600;
-    transition: var(--transition);
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
 }
 
 .btn-accent:hover {
-    box-shadow: 0 0 20px var(--primary-accent);
-    transform: translateY(-2px);
+    box-shadow: 0 0 15px var(--primary-accent);
 }
 
 .btn-outline-accent {
     border: 2px solid var(--primary-accent);
     color: var(--text-main);
-    padding: 8px 23px;
-    border-radius: 8px;
     font-weight: 600;
-    transition: var(--transition);
+    border-radius: 8px;
+    padding: 8px 18px;
 }
 
 .btn-outline-accent:hover {
@@ -232,99 +132,71 @@ small,
     color: #000;
 }
 
-/* --- BADGES & ANIMATIONS --- */
 .badge-tech {
-    background: rgba(99, 102, 241, 0.1);
+    background: rgba(5, 225, 254, 0.1);
     color: var(--primary-accent);
-    border: 1px solid rgba(99, 102, 241, 0.2);
-    font-weight: 600;
+    border: 1px solid rgba(5, 225, 254, 0.3);
 }
 
+/* ANIMACIONES */
 .floating-neon {
     animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+}
+
+/* LÍNEA DE TIEMPO (TIMELINE) */
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 20px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--border-color);
+}
+
+.timeline-item {
+    position: relative;
+    padding-left: 50px;
+    margin-bottom: 30px;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: 13px;
+    top: 5px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--primary-accent);
+    border: 3px solid var(--bg-body);
+}
+
+.timeline-content {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    padding: 20px;
     border-radius: 12px;
 }
 
-[data-theme="dark"] .floating-neon {
-    box-shadow: 0 0 25px rgba(0, 225, 255, 0.4);
+/* Ajuste de espaciado para que la imagen no toque la barra superior */
+.hero-img-adjusted {
+    margin-top: 2rem;
 }
 
-[data-theme="light"] .floating-neon {
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-}
-
-@keyframes float {
-    0% {
-        transform: translateY(0px);
+@media (min-width: 992px) {
+    .hero-img-adjusted {
+        margin-top: 3.5rem;
     }
-
-    50% {
-        transform: translateY(-15px);
-    }
-
-    100% {
-        transform: translateY(0px);
-    }
-}
-
-.hover-scale {
-    transition: 0.3s;
-}
-
-.hover-scale:hover {
-    color: var(--primary-accent) !important;
-    transform: scale(1.2);
-}
-
-/* --- ANIMACIONES Y EFECTOS --- */
-
-@keyframes float {
-    0% {
-        transform: translateY(0px);
-    }
-
-    50% {
-        transform: translateY(-15px);
-    }
-
-    100% {
-        transform: translateY(0px);
-    }
-}
-
-.floating-neon {
-    animation: float 6s ease-in-out infinite;
-    transition: var(--transition);
-    /* Aseguramos que no haya bordes ni cuadros */
-    border: none !important;
-    outline: none !important;
-    background: transparent !important;
-}
-
-/* TEMA CLARO: Sombra suave natural */
-[data-theme="light"] .floating-neon {
-    box-shadow: none !important;
-    /* Quitamos la caja */
-    /* drop-shadow sigue la forma de tu imagen PNG */
-    filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.15));
-}
-
-/* TEMA OSCURO: Resplandor Neón que sigue la silueta */
-[data-theme="dark"] .floating-neon {
-    box-shadow: none !important;
-    /* Quitamos la caja */
-    /* Doble drop-shadow para intensidad neón */
-    filter: drop-shadow(0 0 15px rgba(0, 225, 255, 0.4)) drop-shadow(0 0 30px rgba(189, 0, 255, 0.2));
-}
-
-/* Project Header Ajustado para Grid Vertical */
-.project-header {
-    background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
-    padding: 25px;
-    color: white;
-    /* Quitamos el borde derecho y ponemos uno inferior para separar del contenido */
-    border-right: none;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    /* Alineación izquierda para el grid */
-    text-align: left;
 }
